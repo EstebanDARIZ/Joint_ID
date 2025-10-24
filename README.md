@@ -1,29 +1,35 @@
 
 # Joint-ID: Transformer-Based Joint Image Enhancement and Depth Estimation for Underwater Environments
 
-🔧 Modifications apportées
+## 🔧 Modifications
 
-Ce fork apporte plusieurs ajustements et correctifs par rapport au dépôt original :
+This fork includes several updates and fixes compared to the original repository:
 
-Mise à jour du fichier .gitignore pour exclure les fichiers et dossiers générés automatiquement (joint_id_ckpt.pth, sample_eval_result_joint.diml.joint_id/).
+- **Updated `.gitignore`** to exclude automatically generated files and directories (`joint_id_ckpt.pth`, `sample_eval_result_joint.diml.joint_id/`).
+- **Fixed the image input path** in `joint.diml.joint_id.py`.
+- **Resolved a directory creation issue** in `joint_test_samples.py`, which caused the script to fail during subsequent runs when folders already existed.
 
-Correction du chemin d’accès aux images à tester dans joint.diml.joint_id.py.
+These changes improve the model’s stability and ensure smoother testing across different environments (e.g., Docker, repeated executions, etc.).
 
-Résolution d’un problème de création de dossiers lors de l’exécution de joint_test_samples.py (le script bloquait lors d’une seconde exécution à cause de la présence de répertoires existants).
+---
 
-Ces modifications visent à améliorer la stabilité et la compatibilité du test du modèle dans différents environnements (Docker, exécutions multiples, etc.).
+## 🚀 Quick Tutorial
 
-TuTo rapide :   
-    ```
-    # run the docker container
-docker run --rm --gpus all -it --name joint-id-test --ipc=host --shm-size=256M -v /home/esteban-dreau-darizcuren/doctorat/code/Joint_ID:/root/workspace -v /home/esteban-dreau-darizcuren/doctorat/code/jointid_test:/root/workspace/sample_eval_result_joint.diml.joint_id -v /home/esteban-dreau-darizcuren/doctorat/code/jointid_test/data:/root/workspace/test_data ygm7422/official_joint_id:latest
-    ```
-Dans le conteneur : 
-    ```
-    python run.py local_configs/arg_joint_samples_test.txt
-    ```
+### 🐳 Run the Docker container
+```bash
+docker run --rm --gpus all -it --name joint-id-test --ipc=host --shm-size=256M \
+-v /home/esteban-dreau-darizcuren/doctorat/code/Joint_ID:/root/workspace \
+-v /home/esteban-dreau-darizcuren/doctorat/code/jointid_test:/root/workspace/sample_eval_result_joint.diml.joint_id \
+-v /home/esteban-dreau-darizcuren/doctorat/code/jointid_test/data:/root/workspace/test_data \
+ygm7422/official_joint_id:latest
+```
 
+### Inside the container 
+```
+python run.py local_configs/arg_joint_samples_test.txt
+```
 
+##
 
 
 
