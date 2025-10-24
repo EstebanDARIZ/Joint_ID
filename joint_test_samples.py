@@ -102,10 +102,16 @@ class Joint_Model_Samples_Test(object):
         save_depth_raw_name = 'sample_eval_result_' + self.opt.log_comment + '/depth_raw'
         save_depth_normalised_name = 'sample_eval_result_' + self.opt.log_comment + '/depth_normalized'
         
-        os.mkdir(save_name)
-        os.mkdir(save_enhanced_name)
-        os.mkdir(save_depth_raw_name)
-        os.mkdir(save_depth_normalised_name)
+        #Modification here to create the main folder if it does not exist
+        if not os.path.exists(save_name):
+            os.mkdir(save_name)
+        if not os.path.exists(save_enhanced_name):
+            os.mkdir(save_enhanced_name)
+        if not os.path.exists(save_depth_raw_name):
+            os.mkdir(save_depth_raw_name)
+        if not os.path.exists(save_depth_normalised_name):
+            os.mkdir(save_depth_normalised_name)
+
         
         prev_time = time.time() 
         total_frames = 0

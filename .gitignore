@@ -1,2 +1,6 @@
 __pycache__
 dataset_root
+
+# Ignore le modèle et les résultats 
+joint_id_ckpt.pth
+sample_eval_result_joint.diml.joint_id/

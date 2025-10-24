@@ -62,7 +62,7 @@ dataset = dict(
                test_txt_file='dataset_root/test.txt',
 
                # sample_test_data_path='${your standard or custom dataset}',
-               sample_test_data_path='demo',
+               sample_test_data_path='/root/workspace/test_data',
                video_txt_file=''
                )
 
