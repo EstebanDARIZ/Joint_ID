@@ -1,9 +1,32 @@
 
 # Joint-ID: Transformer-Based Joint Image Enhancement and Depth Estimation for Underwater Environments
 
-**IEEE Sensors Journal 2023**
+🔧 Modifications apportées
 
-This repository represents the official implementation of the paper titled "Transformer-Based Joint Image Enhancement and Depth Estimation for Underwater Environments".
+Ce fork apporte plusieurs ajustements et correctifs par rapport au dépôt original :
+
+Mise à jour du fichier .gitignore pour exclure les fichiers et dossiers générés automatiquement (joint_id_ckpt.pth, sample_eval_result_joint.diml.joint_id/).
+
+Correction du chemin d’accès aux images à tester dans joint.diml.joint_id.py.
+
+Résolution d’un problème de création de dossiers lors de l’exécution de joint_test_samples.py (le script bloquait lors d’une seconde exécution à cause de la présence de répertoires existants).
+
+Ces modifications visent à améliorer la stabilité et la compatibilité du test du modèle dans différents environnements (Docker, exécutions multiples, etc.).
+
+TuTo rapide :   
+    ```
+    # run the docker container
+docker run --rm --gpus all -it --name joint-id-test --ipc=host --shm-size=256M -v /home/esteban-dreau-darizcuren/doctorat/code/Joint_ID:/root/workspace -v /home/esteban-dreau-darizcuren/doctorat/code/jointid_test:/root/workspace/sample_eval_result_joint.diml.joint_id -v /home/esteban-dreau-darizcuren/doctorat/code/jointid_test/data:/root/workspace/test_data ygm7422/official_joint_id:latest
+    ```
+Dans le conteneur : 
+    ```
+    python run.py local_configs/arg_joint_samples_test.txt
+    ```
+
+
+
+
+
 
 [![ProjectPage](fig/badges/badge-website.svg)](https://sites.google.com/view/joint-id/home)
 [![Paper](https://img.shields.io/badge/📄%20Paper-PDF-yellow)](https://ieeexplore.ieee.org/abstract/document/10351035)
