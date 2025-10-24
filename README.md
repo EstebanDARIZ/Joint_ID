@@ -26,6 +26,7 @@ ygm7422/official_joint_id:latest
 
 ### Inside the container 
 ```
+cd /root/workspace/
 python run.py local_configs/arg_joint_samples_test.txt
 ```
 
