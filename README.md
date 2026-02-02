@@ -5,7 +5,6 @@
 
 This fork includes several updates and fixes compared to the original repository:
 
-- **Updated `.gitignore`** to exclude automatically generated files and directories (`joint_id_ckpt.pth`, `sample_eval_result_joint.diml.joint_id/`).
 - **Fixed the image input path** in `joint.diml.joint_id.py`.
 - **Resolved a directory creation issue** in `joint_test_samples.py`, which caused the script to fail during subsequent runs when folders already existed.
 
@@ -24,11 +23,14 @@ docker run --rm --gpus all -it --name joint-id-test --ipc=host --shm-size=256M \
 ygm7422/official_joint_id:latest
 ```
 
+
 ### Inside the container 
 ```
 cd /root/workspace/
 python run.py local_configs/arg_joint_samples_test.txt
 ```
+
+
 
 ## Original README
 
