@@ -17,12 +17,11 @@ These changes improve the model’s stability and ensure smoother testing across
 ### 🐳 Run the Docker container
 ```bash
 docker run --rm --gpus all -it --name joint-id-test --ipc=host --shm-size=256M \
--v /home/esteban-dreau-darizcuren/doctorat/code/img_enhancer/Joint_ID/Joint_ID:/root/workspace \
--v /home/esteban-dreau-darizcuren/doctorat/code/img_enhancer/Joint_ID/results:/root/workspace/sample_eval_result_joint.diml.joint_id \
+-v /home/esteban-dreau-darizcuren/doctorat/code/UIE/img_enhancer/Joint_ID/Joint_ID:/root/workspace \
+-v /home/esteban-dreau-darizcuren/doctorat/code/UIE/img_enhancer/Joint_ID/results:/root/workspace/sample_eval_result_joint.diml.joint_id \
 -v /home/esteban-dreau-darizcuren/doctorat/code/img_enhancer/Joint_ID/dataset:/root/workspace/test_data \
 ygm7422/official_joint_id:latest
 ```
-
 
 ### Inside the container 
 ```
